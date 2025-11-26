@@ -1,74 +1,25 @@
-
-
-
-
-**Example for the Posts Section:**
-
-**Static HTML (from the code below):**
-```html
-<div class="posts-grid">
-    <article class="post-card">
-        <img src="https://picsum.photos/seed/ai-chip/400/250.jpg" alt="...">
-        <div class="post-content">
-            <p class="post-meta">Artificial Intelligence | October 15, 2023</p>
-            <h3>How New-Gen Chips Are Changing the AI Industry?</h3>
-            <p>We explore the latest developments...</p>
-            <a href="#" class="read-more">Read More &rarr;</a>
-        </div>
-    </article>
-    <!-- More post cards... -->
-</div>
-```
-
-**Dynamic Blogger Version:**
-You would replace the entire `<div class="posts-grid">` with a Blogger loop like this:
-```xml
-<b:loop values='data:posts' var='post'>
-    <article class='post-card'>
-        <b:if cond='data:post.firstImageUrl'>
-            <img expr:alt='data:post.title' expr:src='data:post.firstImageUrl'/>
-        <b:else/>
-            <img alt='No image' src='https://picsum.photos/seed/default/400/250.jpg'/>
-        </b:if>
-        <div class='post-content'>
-            <p class='post-meta'>
-                <b:if cond='data:post.labels'>
-                    <b:loop values='data:post.labels limit=1' var='label'>
-                        <data:label.name/>
-                    </b:loop> |
-                </b:if>
-                <data:post.dateHeader/>
-            </p>
-            <h3><a expr:href='data:post.url'><data:post.title/></a></h3>
-            <p><data:post.snippet/></p>
-            <a expr:href='data:post.url' class='read-more'>Read More &rarr;</a>
-        </div>
-    </article>
-</b:loop>
-```
-You would apply similar logic to the header (using `<data:blog.title/>`), navigation links, and footer.
-
----
-
-### Complete English HTML Code
-
-Copy this code, save it as `index.html`, and open it in your browser to see the result.
-
-```html
+<?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html b:css='false' b:defaultwidgetversion='2' b:layoutsVersion='3' b:responsive='true' b:version='2' expr:dir='data:blog.languageDirection' lang='en' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tech & Chips Blog | The Future of Technology</title>
-    <meta name="description" content="A blog specializing in the latest technology news, artificial intelligence, and the smart chips shaping our world.">
+    <meta charset='UTF-8'/>
+    <meta content='width=device-width, initial-scale=1' name='viewport'/>
+    <b:include data='blog' name='all-head-content'/>
+    <title><data:blog.pageTitle/></title>
 
     <!-- Import a nice English font from Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&amp;display=swap' rel='stylesheet'/>
 
-    <style>
+    <b:skin>
+        <![CDATA[
+        /* -----------------------------------------------
+        Blogger Template Style
+        Name:   TechChips English Blogger Template
+        Designer: AI Assistant
+        URL:     -
+        ----------------------------------------------- */
+
         /* === General CSS Styles & Reset === */
         * {
             margin: 0;
@@ -166,7 +117,7 @@ Copy this code, save it as `index.html`, and open it in your browser to see the 
 
         /* === Hero Section (Banner) === */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://picsum.photos/seed/techchips/1600/800.jpg') no-repeat center center/cover;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(https://picsum.photos/seed/techchips/1600/800.jpg) no-repeat center center/cover;
             color: #ffffff;
             text-align: center;
             padding: 120px 0;
@@ -207,7 +158,7 @@ Copy this code, save it as `index.html`, and open it in your browser to see the 
             color: #343a40;
         }
 
-        .posts-grid {
+        .blog-posts {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
@@ -226,7 +177,7 @@ Copy this code, save it as `index.html`, and open it in your browser to see the 
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
 
-        .post-card img {
+        .post-card .post-image {
             width: 100%;
             height: 200px;
             object-fit: cover;
@@ -245,14 +196,6 @@ Copy this code, save it as `index.html`, and open it in your browser to see the 
         .post-card h3 {
             font-size: 1.4rem;
             margin-bottom: 0.5rem;
-        }
-        
-        .post-card h3 a {
-            color: #343a40;
-        }
-
-        .post-card h3 a:hover {
-            color: #007bff;
         }
 
         .post-card p {
@@ -305,7 +248,7 @@ Copy this code, save it as `index.html`, and open it in your browser to see the 
             font-size: 0.9rem;
             color: #6c757d;
         }
-        
+
         .category-card:hover p {
             color: #f8f9fa;
         }
@@ -314,7 +257,7 @@ Copy this code, save it as `index.html`, and open it in your browser to see the 
         .about {
             background-color: #fff;
         }
-        
+
         .about .container {
             display: flex;
             align-items: center;
@@ -401,11 +344,11 @@ Copy this code, save it as `index.html`, and open it in your browser to see the 
         .footer-section ul li {
             margin-bottom: 0.5rem;
         }
-        
+
         .footer-section a {
             color: #adb5bd;
         }
-        
+
         .footer-section a:hover {
             color: #fff;
         }
@@ -442,165 +385,301 @@ Copy this code, save it as `index.html`, and open it in your browser to see the 
             }
         }
 
-    </style>
+        ]]>
+    </b:skin>
 </head>
-<body>
 
+<body>
     <!-- ===== Header & Navigation ===== -->
-    <header class="main-header">
-        <div class="container">
-            <a href="index.html" class="logo">Tech<span>Chips</span></a>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#posts">Articles</a></li>
-                    <li><a href="#categories">Categories</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
+    <header class='main-header'>
+        <div class='container'>
+            <b:section class='header-logo' id='header-logo' maxwidgets='1' showaddelement='no'>
+                <b:widget id='Header1' locked='true' title='Tech & Chips Blog (Header)' type='Header' version='2'>
+                    <b:widget-settings>
+                        <b:widget-setting name='displayUrl'>false</b:widget-setting>
+                        <b:widget-setting name='displayHeight'>0</b:widget-setting>
+                        <b:widget-setting name='displayWidth'>0</b:widget-setting>
+                        <b:widget-setting name='shrinkToFit'>false</b:widget-setting>
+                    </b:widget-settings>
+                    <b:includable id='main'>
+                        <b:if cond='data:useImage'>
+                            <b:if cond='data:imagePlacement == &quot;BEHIND&quot;'>
+                                <b:if cond='data:mobile'>
+                                    <div id='header-inner'>
+                                        <div class='titlewrapper' style='background: transparent'>
+                                            <h1 class='title' style='background: transparent; border-width: 0px'>
+                                                <b:include name='title'/>
+                                            </h1>
+                                        </div>
+                                        <b:include name='description'/>
+                                    </div>
+                                <b:else/>
+                                    <div expr:style='&quot;background-image: url(\&quot;&quot; + data:sourceUrl + &quot;\&quot;); &quot; + &quot;background-position: &quot; + data:backgroundPositionStyleStr + &quot;; &quot; + &quot;min-width: 1000px; &quot; + &quot;height: &quot; + (data:height + data:margin + data:margin) + &quot;px;&quot; + &quot; _height: &quot; + (data:height + data:margin + data:margin) + &quot;px;&quot; + &quot;min-height: &quot; + (data:height + data:margin + data:margin) + &quot;px;&quot; + &quot;_min-height: &quot; + (data:height + data:margin + data:margin) + &quot;px;&quot; + &quot;margin: 0; &quot; + &quot;_margin: 0; &quot; + &quot;background-repeat: no-repeat; &quot; + &quot;_background-repeat: no-repeat&quot;' id='header-inner'>
+                                        <div class='titlewrapper' style='opacity: 0'>
+                                            <h1 class='title' style='background: transparent; border-width: 0px'>
+                                                <b:include name='title'/>
+                                            </h1>
+                                        </div>
+                                        <b:include name='description'/>
+                                    </div>
+                                </b:if>
+                            <b:else/>
+                                <div id='header-inner'>
+                                    <a class='logo' expr:href='data:blog.homepageUrl'><data:blog.title/></a>
+                                </div>
+                            </b:if>
+                        <b:else/>
+                            <div id='header-inner'>
+                                <a class='logo' expr:href='data:blog.homepageUrl'><data:blog.title/></a>
+                            </div>
+                        </b:if>
+                    </b:includable>
+                    <b:includable id='description'>
+                        <p class='description'><span><data:description/></span></p>
+                    </b:includable>
+                    <b:includable id='title'>
+                        <b:if cond='data:blog.url == data:blog.homepageUrl'>
+                            <data:title/>
+                        <b:else/>
+                            <a expr:href='data:blog.homepageUrl'><data:title/></a>
+                        </b:if>
+                    </b:includable>
+                </b:widget>
+            </b:section>
+            <nav class='main-nav'>
+                <b:section class='header-nav' id='header-nav' maxwidgets='1' showaddelement='yes'>
+                    <b:widget id='PageList1' locked='false' title='Menu' type='PageList' version='2'>
+                        <b:widget-settings>
+                            <b:widget-setting name='pageListJson'>{&quot;home&quot;:{&quot;href&quot;:&quot;https://techchips-en.blogspot.com/&quot;,&quot;title&quot;:&quot;Home&quot;}}</b:widget-setting>
+                            <b:widget-setting name='showHome'>true</b:widget-setting>
+                        </b:widget-settings>
+                        <b:includable id='main'>
+                            <b:if cond='data:widget.sectionId == &quot;header-nav&quot;'>
+                                <ul>
+                                    <b:loop values='data:links' var='link'>
+                                        <li><a expr:href='data:link.href'><data:link.title/></a></li>
+                                    </b:loop>
+                                </ul>
+                            </b:if>
+                        </b:includable>
+                    </b:widget>
+                </b:section>
             </nav>
         </div>
     </header>
 
     <main>
         <!-- ===== Hero Section (Banner) ===== -->
-        <section id="home" class="hero">
-            <div class="container">
+        <section id='home' class='hero'>
+            <div class='container'>
                 <h1>The Future of Technology at Your Fingertips</h1>
                 <p>We dive deep into the world of smart chips, artificial intelligence, and all that's new in tech to keep you constantly informed.</p>
-                <a href="#posts" class="cta-button">Discover More</a>
+                <a href='#posts' class='cta-button'>Discover More</a>
             </div>
         </section>
 
-        <!-- ===== Latest Articles Section ===== -->
-        <section id="posts" class="posts">
-            <div class="container">
-                <h2 class="section-title">Latest Articles</h2>
-                <div class="posts-grid">
-                    <article class="post-card">
-                        <img src="https://picsum.photos/seed/ai-chip/400/250.jpg" alt="Article about AI chips">
-                        <div class="post-content">
-                            <p class="post-meta">Artificial Intelligence | October 15, 2023</p>
-                            <h3><a href="#">How New-Gen Chips Are Changing the AI Industry?</a></h3>
-                            <p>We explore the latest developments in designing chips that accelerate deep learning processes and their impact on future applications.</p>
-                            <a href="#" class="read-more">Read More &rarr;</a>
-                        </div>
-                    </article>
-
-                    <article class="post-card">
-                        <img src="https://picsum.photos/seed/iot-smart/400/250.jpg" alt="Article about IoT">
-                        <div class="post-content">
-                            <p class="post-meta">Internet of Things | October 12, 2023</p>
-                            <h3><a href="#">The Role of Smart Chips in the Internet of Things (IoT)</a></h3>
-                            <p>From the smart home to connected cities, learn about the small chips that form the vital nervous system of the growing IoT world.</p>
-                            <a href="#" class="read-more">Read More &rarr;</a>
-                        </div>
-                    </article>
-
-                    <article class="post-card">
-                        <img src="https://picsum.photos/seed/quantum-future/400/250.jpg" alt="Article about Quantum Computing">
-                        <div class="post-content">
-                            <p class="post-meta">Future of Tech | October 10, 2023</p>
-                            <h3><a href="#">Beyond Silicon: A Look at Quantum Computing</a></h3>
-                            <p>Are we on the verge of a quantum revolution? We take a look at how quantum computers work and the chips that might replace our current processors.</p>
-                            <a href="#" class="read-more">Read More &rarr;</a>
-                        </div>
-                    </article>
-                </div>
+        <!-- ===== Main Posts Section ===== -->
+        <section id='posts' class='posts'>
+            <div class='container'>
+                <h2 class='section-title'>Latest Articles</h2>
+                <b:section class='main' id='main' maxwidgets='1' showaddelement='no'>
+                    <b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog' version='2'>
+                        <b:widget-settings>
+                            <b:widget-setting name='showDateHeader'>true</b:widget-setting>
+                            <b:widget-setting name='showShareButtons'>false</b:widget-setting>
+                            <b:widget-setting name='showCommentLink'>false</b:widget-setting>
+                            <b:widget-setting name='showAuthor'>false</b:widget-setting>
+                            <b:widget-setting name='showPostLabels'>true</b:widget-setting>
+                            <b:widget-setting name='showPostLocation'>false</b:widget-setting>
+                        </b:widget-settings>
+                        <b:includable id='main'>
+                            <b:if cond='data:blog.pageType == &quot;index&quot;'>
+                                <div class='blog-posts'>
+                                    <b:loop values='data:posts' var='post'>
+                                        <article class='post-card'>
+                                            <b:if cond='data:post.firstImageUrl'>
+                                                <img class='post-image' expr:alt='data:post.title' expr:src='data:post.firstImageUrl'/>
+                                            <b:else/>
+                                                <img class='post-image' alt='Default image' src='https://picsum.photos/seed/default/400/250.jpg'/>
+                                            </b:if>
+                                            <div class='post-content'>
+                                                <p class='post-meta'>
+                                                    <b:if cond='data:post.labels'>
+                                                        <b:loop values='data:post.labels limit=1' var='label'>
+                                                            <data:label.name/>
+                                                        </b:loop> |
+                                                    </b:if>
+                                                    <data:post.dateHeader/>
+                                                </p>
+                                                <h3><a expr:href='data:post.url'><data:post.title/></a></h3>
+                                                <p><data:post.snippet/></p>
+                                                <a expr:href='data:post.url' class='read-more'>Read More &rarr;</a>
+                                            </div>
+                                        </article>
+                                    </b:loop>
+                                </div>
+                            <b:else/>
+                                <b:include name='post'/>
+                            </b:if>
+                        </b:includable>
+                        <b:includable id='post' var='post'>
+                            <div class='container'>
+                                <article class='post'>
+                                    <h1><data:post.title/></h1>
+                                    <div class='post-body'>
+                                        <data:post.body/>
+                                    </div>
+                                </article>
+                            </div>
+                        </b:includable>
+                        <b:includable id='comment-form' var='post'/>
+                        <b:includable id='threaded-comment-form' var='post'/>
+                        <b:includable id='threaded_comment_css'/>
+                        <b:includable id='threaded_comments' var='post'/>
+                        <b:includable id='comments' var='post'/>
+                    </b:widget>
+                </b:section>
             </div>
         </section>
 
         <!-- ===== Categories Section ===== -->
-        <section id="categories" class="categories">
-            <div class="container">
-                <h2 class="section-title">Browse by Category</h2>
-                <div class="categories-grid">
-                    <div class="category-card">
-                        <div class="icon">🤖</div>
-                        <h3>Artificial Intelligence</h3>
-                        <p>12 Articles</p>
-                    </div>
-                    <div class="category-card">
-                        <div class="icon">🔌</div>
-                        <h3>Smart Chips</h3>
-                        <p>8 Articles</p>
-                    </div>
-                    <div class="category-card">
-                        <div class="icon">🌐</div>
-                        <h3>Internet of Things</h3>
-                        <p>15 Articles</p>
-                    </div>
-                    <div class="category-card">
-                        <div class="icon">🔮</div>
-                        <h3>Future of Tech</h3>
-                        <p>20 Articles</p>
-                    </div>
-                </div>
+        <section id='categories' class='categories'>
+            <div class='container'>
+                <h2 class='section-title'>Browse by Category</h2>
+                <b:section class='categories-section' id='categories-section' maxwidgets='1' showaddelement='yes'>
+                    <b:widget id='Label1' locked='false' title='Labels' type='Label' version='2'>
+                        <b:widget-settings>
+                            <b:widget-setting name='sorting'>ALPHA</b:widget-setting>
+                            <b:widget-setting name='display'>list</b:widget-setting>
+                            <b:widget-setting name='selectedLabelsList'/>
+                            <b:widget-setting name='showType'>ALL</b:widget-setting>
+                            <b:widget-setting name='showFreqNumbers'>false</b:widget-setting>
+                        </b:widget-settings>
+                        <b:includable id='main'>
+                            <b:if cond='data:widget.sectionId == &quot;categories-section&quot;'>
+                                <div class='categories-grid'>
+                                    <b:loop values='data:labels' var='label'>
+                                        <div class='category-card'>
+                                            <div class='icon'>🔌</div>
+                                            <h3><a expr:href='data:label.url'><data:label.name/></a></h3>
+                                            <p><data:label.count/> Articles</p>
+                                        </div>
+                                    </b:loop>
+                                </div>
+                            </b:if>
+                        </b:includable>
+                    </b:widget>
+                </b:section>
             </div>
         </section>
 
         <!-- ===== About Us Section ===== -->
-        <section id="about" class="about">
-            <div class="container">
-                <div class="about-content">
-                    <h2 class="section-title">About Us</h2>
-                    <p>We are a team of technology enthusiasts and specialists in the field of electronic chips. Our blog began as a platform for sharing knowledge and ideas about the latest technological advancements, with a special focus on the smart chips that have become an integral part of our daily lives and the future of all industries.</p>
-                    <p>Our goal is to simplify complex concepts and provide accurate, reliable content that helps our readers understand the technological world around them.</p>
-                </div>
-                <div class="about-image">
-                    <img src="https://picsum.photos/seed/team-tech/500/400.jpg" alt="Image of the team">
+        <section id='about' class='about'>
+            <div class='container'>
+                <b:section class='about-section' id='about-section' maxwidgets='1' showaddelement='yes'>
+                    <b:widget id='Text1' locked='false' title='About Us' type='Text' version='2'>
+                        <b:widget-settings>
+                            <b:widget-setting name='content'>We are a team of technology enthusiasts and specialists in the field of electronic chips. Our blog began as a platform for sharing knowledge and ideas about the latest technological advancements, with a special focus on the smart chips that have become an integral part of our daily lives and the future of all industries. Our goal is to simplify complex concepts and provide accurate, reliable content that helps our readers understand the technological world around them.</b:widget-setting>
+                        </b:widget-settings>
+                        <b:includable id='main'>
+                            <b:if cond='data:widget.sectionId == &quot;about-section&quot;'>
+                                <div class='about-content'>
+                                    <h2 class='section-title'><data:title/></h2>
+                                    <p><data:content/></p>
+                                </div>
+                            </b:if>
+                        </b:includable>
+                    </b:widget>
+                </b:section>
+                <div class='about-image'>
+                    <img alt='Image of the team' src='https://picsum.photos/seed/team-tech/500/400.jpg'/>
                 </div>
             </div>
         </section>
 
         <!-- ===== Newsletter Section ===== -->
-        <section id="contact" class="newsletter">
-            <div class="container">
-                <h2>Don't Miss Out!</h2>
-                <p>Subscribe to our newsletter and get the latest articles and news delivered directly to your inbox.</p>
-                <form class="newsletter-form" action="#" method="post">
-                    <input type="email" name="email" placeholder="Enter your email address" required>
-                    <button type="submit">Subscribe Now</button>
-                </form>
+        <section id='contact' class='newsletter'>
+            <div class='container'>
+                <b:section class='newsletter-section' id='newsletter-section' maxwidgets='1' showaddelement='yes'>
+                    <b:widget id='Text2' locked='false' title='Don&apos;t Miss Out!' type='Text' version='2'>
+                        <b:widget-settings>
+                            <b:widget-setting name='content'><![CDATA[<p>Subscribe to our newsletter and get the latest articles and news delivered directly to your inbox.</p>
+<form class="newsletter-form" action="#" method="post">
+    <input type="email" name="email" placeholder="Enter your email address" required>
+    <button type="submit">Subscribe Now</button>
+</form>]]></b:widget-setting>
+                        </b:widget-settings>
+                        <b:includable id='main'>
+                            <b:if cond='data:widget.sectionId == &quot;newsletter-section&quot;'>
+                                <h2><data:title/></h2>
+                                <p><data:content/></p>
+                            </b:if>
+                        </b:includable>
+                    </b:widget>
+                </b:section>
             </div>
         </section>
     </main>
 
     <!-- ===== Footer ===== -->
-    <footer class="main-footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>TechChips Blog</h3>
-                    <p>Your primary source for all things new in the world of technology and smart chips. We believe that knowledge is the key to the future.</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="#posts">Latest Articles</a></li>
-                        <li><a href="#categories">Categories</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Follow Us</h3>
-                    <p>Connect with us on social media to keep up with the latest news.</p>
-                    <!-- You can add social media icons here -->
-                    <p>
-                        <a href="#" style="margin: 0 10px;">Facebook</a> |
-                        <a href="#" style="margin: 0 10px;">Twitter</a> |
-                        <a href="#" style="margin: 0 10px;">Instagram</a>
-                    </p>
-                </div>
+    <footer class='main-footer'>
+        <div class='container'>
+            <div class='footer-content'>
+                <b:section class='footer-about' id='footer-about' maxwidgets='1' showaddelement='yes'>
+                    <b:widget id='Text3' locked='false' title='TechChips Blog' type='Text' version='2'>
+                        <b:widget-settings>
+                            <b:widget-setting name='content'>Your primary source for all things new in the world of technology and smart chips. We believe that knowledge is the key to the future.</b:widget-setting>
+                        </b:widget-settings>
+                        <b:includable id='main'>
+                            <div class='footer-section'>
+                                <h3><data:title/></h3>
+                                <p><data:content/></p>
+                            </div>
+                        </b:includable>
+                    </b:widget>
+                </b:section>
+                <b:section class='footer-links' id='footer-links' maxwidgets='1' showaddelement='yes'>
+                    <b:widget id='PageList2' locked='false' title='Quick Links' type='PageList' version='2'>
+                        <b:widget-settings>
+                            <b:widget-setting name='pageListJson'>{&quot;home&quot;:{&quot;href&quot;:&quot;https://techchips-en.blogspot.com/&quot;,&quot;title&quot;:&quot;Home&quot;}}</b:widget-setting>
+                            <b:widget-setting name='showHome'>true</b:widget-setting>
+                        </b:widget-settings>
+                        <b:includable id='main'>
+                            <div class='footer-section'>
+                                <h3><data:title/></h3>
+                                <ul>
+                                    <b:loop values='data:links' var='link'>
+                                        <li><a expr:href='data:link.href'><data:link.title/></a></li>
+                                    </b:loop>
+                                </ul>
+                            </div>
+                        </b:includable>
+                    </b:widget>
+                </b:section>
+                <b:section class='footer-social' id='footer-social' maxwidgets='1' showaddelement='yes'>
+                    <b:widget id='Text4' locked='false' title='Follow Us' type='Text' version='2'>
+                        <b:widget-settings>
+                            <b:widget-setting name='content'>Connect with us on social media to keep up with the latest news.
+<p>
+    <a href="#" style="margin: 0 10px;">Facebook</a> |
+    <a href="#" style="margin: 0 10px;">Twitter</a> |
+    <a href="#" style="margin: 0 10px;">Instagram</a>
+</p></b:widget-setting>
+                        </b:widget-settings>
+                        <b:includable id='main'>
+                            <div class='footer-section'>
+                                <h3><data:title/></h3>
+                                <p><data:content/></p>
+                            </div>
+                        </b:includable>
+                    </b:widget>
+                </b:section>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2023 TechChips Blog. All Rights Reserved.</p>
+            <div class='footer-bottom'>
+                <p>&copy; 2023 <data:blog.title/>. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
 </body>
 </html>
-
-```
