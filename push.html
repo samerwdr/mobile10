@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Notifications</title>
+
+<style>
+    body {
+        background: #f2f2f2;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding: 40px;
+    }
+
+    .box {
+        background: #fff;
+        padding: 30px;
+        margin: auto;
+        max-width: 380px;
+        border-radius: 12px;
+        box-shadow: 0 0 8px rgba(0,0,0,0.15);
+    }
+
+    h2 {
+        margin-bottom: 15px;
+        color: #333;
+    }
+
+    p {
+        font-size: 17px;
+        color: #666;
+    }
+
+    .btn {
+        margin-top: 25px;
+        padding: 14px 30px;
+        font-size: 18px;
+        background: #007bff;
+        color: #fff;
+        border-radius: 10px;
+        cursor: pointer;
+        border: none;
+    }
+</style>
+
+</head>
+<body>
+
+<div class="box">
+    <h2>Enable Notifications</h2>
+    <p>Click the button below to get updates and alerts.</p>
+    <button class="btn" onclick="subscribe()">Enable</button>
+</div>
+
+<script>
+function subscribe() {
+    Notification.requestPermission().then(function(permission) {
+        // Will show browser native notification popup
+    });
+}
+</script>
+
+<!-- Tacolo Push Script -->
+<script type="application/javascript" src="https://soajd.sjscdn.com/ps/ps.js?id=AfXuIY0QYEGH03gnLu5gEA" async></script>
+
+</body>
+</html>
