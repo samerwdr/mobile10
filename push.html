@@ -3,60 +3,82 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Notifications</title>
+<title>Get Notifications</title>
 
 <style>
     body {
-        background: #f2f2f2;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(135deg, #0052d4, #4364f7, #6fb1fc);
         font-family: Arial, sans-serif;
-        text-align: center;
-        padding: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        color: #fff;
     }
 
-    .box {
-        background: #fff;
+    .card {
+        background: rgba(255,255,255,0.15);
         padding: 30px;
-        margin: auto;
-        max-width: 380px;
-        border-radius: 12px;
-        box-shadow: 0 0 8px rgba(0,0,0,0.15);
+        width: 90%;
+        max-width: 400px;
+        text-align: center;
+        border-radius: 18px;
+        backdrop-filter: blur(8px);
+        box-shadow: 0 0 20px rgba(0,0,0,0.25);
+        animation: fadeIn 1s ease;
     }
 
     h2 {
-        margin-bottom: 15px;
-        color: #333;
+        margin-bottom: 10px;
+        font-size: 26px;
+        font-weight: bold;
     }
 
     p {
         font-size: 17px;
-        color: #666;
+        opacity: 0.9;
     }
 
     .btn {
         margin-top: 25px;
-        padding: 14px 30px;
+        padding: 15px 35px;
         font-size: 18px;
-        background: #007bff;
-        color: #fff;
-        border-radius: 10px;
+        border-radius: 12px;
+        background: #ffcc00;
+        color: #000;
         cursor: pointer;
         border: none;
+        font-weight: bold;
+        box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        transition: 0.3s;
+    }
+
+    .btn:hover {
+        background: #ffdd33;
+        transform: scale(1.05);
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
     }
 </style>
-
 </head>
+
 <body>
 
-<div class="box">
-    <h2>Enable Notifications</h2>
-    <p>Click the button below to get updates and alerts.</p>
-    <button class="btn" onclick="subscribe()">Enable</button>
+<div class="card">
+    <h2>Stay Updated!</h2>
+    <p>Click the button below to enable notifications and receive important alerts.</p>
+    <button class="btn" onclick="subscribe()">Enable Notifications</button>
 </div>
 
 <script>
 function subscribe() {
     Notification.requestPermission().then(function(permission) {
-        // Will show browser native notification popup
+        // Browser popup appears
     });
 }
 </script>
