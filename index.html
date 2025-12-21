@@ -1,103 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-    <script type="application/javascript" src="https://soajd.sjscdn.com/ps/ps.js?id=310zPJO_1U2K0ybLJiMd3Q" async></script>
-<meta http-equiv="refresh" content="1111111111; url=http://p.npcad.com/go/497512/749170">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="TechChip Insights - Your premier source for news and analysis on smart chips and emerging technologies. Explore the latest innovations in mobile processors, AI chips, and semiconductor technology.">
-    <meta name="keywords" content="tech blog, smart chips, mobile processors, AI, semiconductors, technology news, chip manufacturing, RISC-V, quantum computing">
-    <meta name="author" content="TechChip Insights">
-    <meta name="robots" content="index, follow">
-    
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3FSVQW515S"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-3FSVQW515S');
-    </script>
-
-    <!-- Google Fonts: Poppins -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
     <title>TechChip Insights - Smart Chips & Technology News</title>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* --- CSS Variables for Easy Customization --- */
         :root {
-            --primary-color: #007bff;
-            --secondary-color: #0056b3;
-            --dark-color: #343a40;
-            --light-color: #f8f9fa;
-            --text-color: #333;
-            --background-color: #f4f4f4;
-            --card-bg: #ffffff;
-            --footer-bg: #2c3e50;
-            --footer-text: #ecf0f1;
-            --font-family: 'Poppins', sans-serif;
+            --primary: #007bff;
+            --secondary: #0056b3;
+            --dark: #343a40;
+            --light: #f8f9fa;
+            --white: #ffffff;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
         }
 
-        /* --- Global Styles --- */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
         body {
-            font-family: var(--font-family);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--background-color);
+            color: var(--dark);
+            background-color: var(--light);
         }
 
         .container {
-            max-width: 1100px;
-            margin: auto;
-            overflow: hidden;
-            padding: 0 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
-        h1, h2, h3 {
-            font-weight: 600;
-            line-height: 1.2;
-        }
-
-        a {
-            text-decoration: none;
-            color: var(--primary-color);
-        }
-
-        ul {
-            list-style: none;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        section {
-            padding: 4rem 0;
-        }
-
-        /* --- Header & Navigation --- */
-        .main-header {
-            background: var(--card-bg);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        /* Header Styles */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -110,50 +51,55 @@
             padding: 1rem 0;
         }
 
-        .main-header .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--dark-color);
-        }
-
-        .main-header .logo i {
-            color: var(--primary-color);
-        }
-
-        .main-nav ul {
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            text-decoration: none;
             display: flex;
+            align-items: center;
         }
 
-        .main-nav ul li {
-            margin-left: 1.5rem;
+        .logo i {
+            margin-right: 10px;
         }
 
-        .main-nav a {
-            color: var(--dark-color);
-            font-weight: 400;
-            font-size: 1rem;
-            transition: color 0.3s ease;
+        nav ul {
+            display: flex;
+            list-style: none;
         }
 
-        .main-nav a:hover {
-            color: var(--primary-color);
+        nav ul li {
+            margin-left: 20px;
         }
 
-        /* --- Hero Section --- */
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+
+        /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://picsum.photos/seed/hero-tech/1600/800.jpg') no-repeat center center/cover;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://picsum.photos/seed/tech-hero/1600/800.jpg') center/cover;
             height: 60vh;
-            color: #fff;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 0 2rem;
+            color: var(--white);
+            padding: 0 20px;
         }
 
-        .hero h2 {
-            font-size: 3.5rem;
+        .hero h1 {
+            font-size: 3rem;
             margin-bottom: 1rem;
         }
 
@@ -164,25 +110,29 @@
         }
 
         .btn {
-            display: inline-block;
-            background: var(--primary-color);
-            color: #fff;
-            padding: 0.8rem 2rem;
+            background: var(--primary);
+            color: var(--white);
+            padding: 12px 30px;
             border-radius: 5px;
-            font-weight: 600;
-            transition: background 0.3s ease;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s;
         }
 
         .btn:hover {
-            background: var(--secondary-color);
+            background: var(--secondary);
         }
 
-        /* --- Articles Section --- */
+        /* Articles Section */
+        .articles {
+            padding: 4rem 0;
+        }
+
         .section-title {
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 3rem;
-            color: var(--dark-color);
+            color: var(--dark);
         }
 
         .articles-grid {
@@ -192,231 +142,273 @@
         }
 
         .article-card {
-            background: var(--card-bg);
+            background: var(--white);
             border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
             overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
         }
 
         .article-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+            transform: translateY(-5px);
         }
 
-        .article-card img {
+        .article-img {
             height: 200px;
-            object-fit: cover;
+            overflow: hidden;
+        }
+
+        .article-img img {
             width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .article-card:hover .article-img img {
+            transform: scale(1.05);
         }
 
         .article-content {
             padding: 1.5rem;
         }
 
-        .category-tag {
+        .category {
             display: inline-block;
-            background: var(--light-color);
-            color: var(--primary-color);
-            padding: 0.3rem 0.8rem;
-            border-radius: 15px;
+            background: var(--light);
+            color: var(--primary);
+            padding: 5px 15px;
+            border-radius: 20px;
             font-size: 0.8rem;
-            font-weight: 600;
+            font-weight: bold;
             margin-bottom: 1rem;
         }
 
         .article-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
         }
 
         .article-card p {
-            color: #666;
+            color: var(--gray);
             margin-bottom: 1rem;
         }
 
         .read-more {
-            color: var(--primary-color);
-            font-weight: 600;
-        }
-        .read-more:hover {
-            text-decoration: underline;
-        }
-
-        /* --- Categories Section --- */
-        .categories {
-            background: var(--card-bg);
-        }
-        .categories-container {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 1.5rem;
+            color: var(--primary);
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
         }
 
-        .category-box {
-            background: var(--light-color);
-            padding: 2rem 3rem;
-            border-radius: 10px;
-            text-align: center;
-            transition: background 0.3s ease;
-            cursor: pointer;
-        }
-        .category-box:hover {
-            background: #e9ecef;
-        }
-        .category-box i {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-        }
-        .category-box h4 {
-            font-size: 1.1rem;
-            color: var(--dark-color);
+        .read-more i {
+            margin-left: 5px;
         }
 
-        /* --- About Section --- */
+        /* About Section */
+        .about {
+            background: var(--white);
+            padding: 4rem 0;
+        }
+
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+            gap: 4rem;
             align-items: center;
         }
+
         .about-text h2 {
-            font-size: 2.2rem;
-            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
         }
+
         .about-text p {
             margin-bottom: 1rem;
+            font-size: 1.1rem;
+            color: var(--gray);
         }
+
         .about-img img {
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            max-width: 100%;
         }
 
-        /* --- Newsletter Section --- */
-        .newsletter {
-            background: var(--dark-color);
-            color: #fff;
-            text-align: center;
+        /* Contact Section */
+        .contact {
+            background: var(--dark);
+            color: var(--white);
+            padding: 4rem 0;
         }
-        .newsletter h2 {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
         }
-        .newsletter-form {
-            display: flex;
-            max-width: 500px;
-            margin: 1.5rem auto 0;
+
+        .contact-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
         }
-        .newsletter-form input[type="email"] {
-            flex: 1;
-            padding: 0.8rem;
+
+        .contact-text p {
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            color: var(--light-gray);
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 1rem;
             border: none;
-            border-radius: 5px 0 0 5px;
+            border-radius: 5px;
             font-size: 1rem;
         }
-        .newsletter-form button {
-            padding: 0.8rem 1.5rem;
+
+        .contact-form button {
+            background: var(--primary);
+            color: var(--white);
+            padding: 12px 30px;
             border: none;
-            background: var(--primary-color);
-            color: #fff;
-            border-radius: 0 5px 5px 0;
+            border-radius: 5px;
+            font-weight: bold;
             cursor: pointer;
-            font-weight: 600;
-            transition: background 0.3s ease;
-        }
-        .newsletter-form button:hover {
-            background: var(--secondary-color);
+            transition: background 0.3s;
         }
 
-        /* --- Footer --- */
-        .main-footer {
-            background: var(--footer-bg);
-            color: var(--footer-text);
-            padding: 4rem 0 1rem;
+        .contact-form button:hover {
+            background: var(--secondary);
         }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: var(--light-gray);
+            padding: 3rem 0 1rem;
+        }
+
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 2rem;
             margin-bottom: 2rem;
         }
+
         .footer-section h3 {
-            margin-bottom: 1rem;
             font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--white);
         }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
         .footer-section ul li {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
         }
+
         .footer-section a {
-            color: var(--footer-text);
-            transition: color 0.3s ease;
+            color: var(--light-gray);
+            text-decoration: none;
+            transition: color 0.3s;
         }
+
         .footer-section a:hover {
-            color: var(--primary-color);
+            color: var(--primary);
         }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 1.5rem;
+        }
+
         .social-links a {
             font-size: 1.5rem;
-            margin-right: 1rem;
+            color: var(--light-gray);
+            transition: color 0.3s;
         }
+
+        .social-links a:hover {
+            color: var(--primary);
+        }
+
         .copyright {
             text-align: center;
-            border-top: 1px solid #4a5568;
-            padding-top: 1.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--gray);
             font-size: 0.9rem;
         }
 
-        /* --- Ad Placement Areas --- */
-        .ad-container {
-            text-align: center;
-            margin: 2rem 0;
-            background: #f8f9fa;
-            padding: 1rem;
-            border-radius: 8px;
-        }
-
-        /* --- Responsive Design --- */
-        @media(max-width: 768px) {
+        /* Responsive Design */
+        @media (max-width: 768px) {
             .header-content {
                 flex-direction: column;
+                gap: 1rem;
             }
-            .main-nav ul {
-                margin-top: 1rem;
+
+            nav ul {
+                gap: 15px;
             }
-            .main-nav ul li {
-                margin: 0 0.5rem;
+
+            .hero h1 {
+                font-size: 2rem;
             }
-            .hero h2 {
-                font-size: 2.5rem;
+
+            .hero p {
+                font-size: 1rem;
             }
-            .about-content {
+
+            .about-content,
+            .contact-content {
                 grid-template-columns: 1fr;
             }
-            .newsletter-form {
-                flex-direction: column;
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
             }
-            .newsletter-form input {
-                border-radius: 5px;
-                margin-bottom: 0.5rem;
-            }
-            .newsletter-form button {
-                border-radius: 5px;
+
+            .social-links {
+                justify-content: center;
             }
         }
     </style>
 </head>
 <body>
-
-    <!-- ==================== HEADER ==================== -->
-    <header class="main-header">
+    <header>
         <div class="container header-content">
-            <a href="#" class="logo"><i class="fas fa-microchip"></i> TechChip Insights</a>
-            <nav class="main-nav">
+            <a href="#" class="logo">
+                <i class="fas fa-microchip"></i> TechChip Insights
+            </a>
+            <nav>
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#articles">Articles</a></li>
-                    <li><a href="#categories">Categories</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -425,290 +417,154 @@
     </header>
 
     <main>
-        <!-- ==================== HERO SECTION ==================== -->
         <section id="home" class="hero">
-            <h2>Welcome to the Future of Silicon</h2>
-            <p>Exploring the intricate world of smart chips, AI processors, and the technology shaping our tomorrow.</p>
-            <a href="#articles" class="btn">Explore Articles</a>
-        </section>
-
-        <!-- ==================== ADSENSE BANNER 1 ==================== -->
-        <div class="ad-container">
-            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-xxxxxxxxxxxxxxxx" data-ad-slot="xxxxxxxxxx" data-ad-format="auto" data-full-width-responsive="true"></ins>
-        </div>
-
-        <!-- ==================== LATEST ARTICLES ==================== -->
-        <section id="articles" class="container">
-            <h2 class="section-title">Latest Articles</h2>
-            <div class="articles-grid">
-                <!-- Article 1 -->
-                <article class="article-card">
-                    <img src="https://picsum.photos/seed/ai-chip/400/250.jpg" alt="AI on a Chip">
-                    <div class="article-content">
-                        <span class="category-tag">AI</span>
-                        <h3>The Future of AI on a Chip</h3>
-                        <p>How dedicated AI processors are revolutionizing everything from smartphones to data centers.</p>
-                        <a href="#" class="read-more">Read More &rarr;</a>
-                    </div>
-                </article>
-                <!-- Article 2 -->
-                <article class="article-card">
-                    <img src="https://picsum.photos/seed/risc-v/400/250.jpg" alt="RISC-V Architecture">
-                    <div class="article-content">
-                        <span class="category-tag">Hardware</span>
-                        <h3>How RISC-V is Challenging ARM and x86</h3>
-                        <p>An open-source instruction set that promises to democratize chip design and foster innovation.</p>
-                        <a href="#" class="read-more">Read More &rarr;</a>
-                    </div>
-                </article>
-                <!-- Article 3 -->
-                <article class="article-card">
-                    <img src="https://picsum.photos/seed/iot-sensor/400/250.jpg" alt="IoT Sensors">
-                    <div class="article-content">
-                        <span class="category-tag">IoT</span>
-                        <h3>The Role of Smart Chips in IoT</h3>
-                        <p>Exploring the tiny but powerful microcontrollers that power the Internet of Things.</p>
-                        <a href="#" class="read-more">Read More &rarr;</a>
-                    </div>
-                </article>
-                <!-- Article 4 -->
-                <article class="article-card">
-                    <img src="https://picsum.photos/seed/quantum/400/250.jpg" alt="Quantum Computer">
-                    <div class="article-content">
-                        <span class="category-tag">Future Tech</span>
-                        <h3>Quantum Computing: Beyond the Classical Chip</h3>
-                        <p>A look into quantum processors and their potential to solve complex problems.</p>
-                        <a href="#" class="read-more">Read More &rarr;</a>
-                    </div>
-                </article>
-                <!-- Article 5 -->
-                <article class="article-card">
-                    <img src="https://picsum.photos/seed/neuromorphic/400/250.jpg" alt="Neuromorphic Chip">
-                    <div class="article-content">
-                        <span class="category-tag">AI</span>
-                        <h3>Neuromorphic Chips: Mimicking the Human Brain</h3>
-                        <p>How brain-inspired processors are paving the way for more efficient machine learning.</p>
-                        <a href="#" class="read-more">Read More &rarr;</a>
-                    </div>
-                </article>
-                <!-- Article 6 -->
-                <article class="article-card">
-                    <img src="https://picsum.photos/seed/smartcard/400/250.jpg" alt="Smart Card Security">
-                    <div class="article-content">
-                        <span class="category-tag">Security</span>
-                        <h3>The Security Implications of Modern Smart Cards</h3>
-                        <p>From payment systems to ID cards, how embedded chips secure our daily transactions.</p>
-                        <a href="#" class="read-more">Read More &rarr;</a>
-                    </div>
-                </article>
-                <!-- Article 7 -->
-                <article class="article-card">
-                    <img src="https://picsum.photos/seed/apple-m2/400/250.jpg" alt="Apple M2 Chip">
-                    <div class="article-content">
-                        <span class="category-tag">Hardware</span>
-                        <h3>Apple's M-Series Chips: A Revolution in Silicon</h3>
-                        <p>Dissecting the architecture that gives Apple's Macs their incredible performance and efficiency.</p>
-                        <a href="#" class="read-more">Read More &rarr;</a>
-                    </div>
-                </article>
-                <!-- Article 8 -->
-                <article class="article-card">
-                    <img src="https://picsum.photos/seed/autonomous-car/400/250.jpg" alt="Autonomous Vehicle">
-                    <div class="article-content">
-                        <span class="category-tag">Automotive</span>
-                        <h3>Smart Sensors in Autonomous Vehicles</h3>
-                        <p>The critical role of LiDAR, radar, and vision processors in self-driving cars.</p>
-                        <a href="#" class="read-more">Read More &rarr;</a>
-                    </div>
-                </article>
-                <!-- Article 9 -->
-                <article class="article-card">
-                    <img src="https://picsum.photos/seed/chip-manufacturing/400/250.jpg" alt="Chip Fabrication">
-                    <div class="article-content">
-                        <span class="category-tag">Industry</span>
-                        <h3>The Environmental Impact of Chip Manufacturing</h3>
-                        <p>An analysis of the resource-intensive process of creating semiconductors and the push for sustainability.</p>
-                        <a href="#" class="read-more">Read More &rarr;</a>
-                    </div>
-                </article>
-                <!-- Article 10 -->
-                <article class="article-card">
-                    <img src="https://picsum.photos/seed/edge-computing/400/250.jpg" alt="Edge Computing">
-                    <div class="article-content">
-                        <span class="category-tag">Cloud</span>
-                        <h3>Edge Computing and the Rise of the Micro-Datacenter</h3>
-                        <p>How processing is moving closer to the source, powered by specialized edge chips.</p>
-                        <a href="#" class="read-more">Read More &rarr;</a>
-                    </div>
-                </article>
-                
-                <!-- NEW ARTICLES ADDED BELOW -->
-                <!-- Article 11 - Snapdragon 8 Gen 3 -->
-                <article class="article-card">
-                    <img src="https://picsum.photos/seed/snapdragon-8gen3/400/250.jpg" alt="Snapdragon 8 Gen 3">
-                    <div class="article-content">
-                        <span class="category-tag">Mobile</span>
-                        <h3>Snapdragon 8 Gen 3: The Next-Gen Mobile Processor</h3>
-                        <p>Exploring Qualcomm's latest flagship chip with AI enhancements and improved performance for 2024 smartphones.</p>
-                        <a href="#" class="read-more">Read More &rarr;</a>
-                    </div>
-                </article>
-                <!-- Article 12 - Apple A17 Pro -->
-                <article class="article-card">
-                    <img src="https://picsum.photos/seed/apple-a17pro/400/250.jpg" alt="Apple A17 Pro">
-                    <div class="article-content">
-                        <span class="category-tag">Mobile</span>
-                        <h3>Apple A17 Pro: Performance and Efficiency Breakdown</h3>
-                        <p>Deep dive into Apple's 3nm chip that powers the iPhone 15 Pro with enhanced GPU capabilities and AI processing.</p>
-                        <a href="#" class="read-more">Read More &rarr;</a>
-                    </div>
-                </article>
-                <!-- Article 13 - MediaTek Dimensity 9300 -->
-                <article class="article-card">
-                    <img src="https://picsum.photos/seed/mediatek-9300/400/250.jpg" alt="MediaTek Dimensity 9300">
-                    <div class="article-content">
-                        <span class="category-tag">Mobile</span>
-                        <h3>MediaTek Dimensity 9300: Challenging the Flagship Market</h3>
-                        <p>How MediaTek's latest flagship processor competes with Snapdragon and Apple in performance and efficiency.</p>
-                        <a href="#" class="read-more">Read More &rarr;</a>
-                    </div>
-                </article>
-                <!-- Article 14 - Samsung Exynos 2400 -->
-                <article class="article-card">
-                    <img src="https://picsum.photos/seed/exynos-2400/400/250.jpg" alt="Samsung Exynos 2400">
-                    <div class="article-content">
-                        <span class="category-tag">Mobile</span>
-                        <h3>Samsung Exynos 2400: What's New in Samsung's Chip</h3>
-                        <p>Analysis of Samsung's latest Exynos processor with improved AI capabilities and power efficiency.</p>
-                        <a href="#" class="read-more">Read More &rarr;</a>
-                    </div>
-                </article>
-                <!-- Article 15 - Google Tensor G3 -->
-                <article class="article-card">
-                    <img src="https://picsum.photos/seed/google-tensor/400/250.jpg" alt="Google Tensor G3">
-                    <div class="article-content">
-                        <span class="category-tag">Mobile</span>
-                        <h3>Google Tensor G3: AI-Powered Mobile Experience</h3>
-                        <p>How Google's custom chip enhances computational photography and AI features in Pixel devices.</p>
-                        <a href="#" class="read-more">Read More &rarr;</a>
-                    </div>
-                </article>
-                <!-- Article 16 - AMD Ryzen Mobile -->
-                <article class="article-card">
-                    <img src="https://picsum.photos/seed/amd-ryzen-mobile/400/250.jpg" alt="AMD Ryzen Mobile">
-                    <div class="article-content">
-                        <span class="category-tag">Laptops</span>
-                        <h3>AMD Ryzen Mobile Processors: Gaming on the Go</h3>
-                        <p>The latest AMD chips bringing desktop-class performance to thin and light laptops.</p>
-                        <a href="#" class="read-more">Read More &rarr;</a>
-                    </div>
-                </article>
-                <!-- Article 17 - Intel Core Ultra -->
-                <article class="article-card">
-                    <img src="https://picsum.photos/seed/intel-core-ultra/400/250.jpg" alt="Intel Core Ultra">
-                    <div class="article-content">
-                        <span class="category-tag">Laptops</span>
-                        <h3>Intel Core Ultra: Hybrid Architecture for Laptops</h3>
-                        <p>Intel's new processor family with performance, efficiency, and AI cores for next-gen computing.</p>
-                        <a href="#" class="read-more">Read More &rarr;</a>
-                    </div>
-                </article>
-                <!-- Article 18 - Qualcomm Quick Charge 5.0 -->
-                <article class="article-card">
-                    <img src="https://picsum.photos/seed/quick-charge/400/250.jpg" alt="Quick Charge 5.0">
-                    <div class="article-content">
-                        <span class="category-tag">Mobile Tech</span>
-                        <h3>Qualcomm Quick Charge 5.0: Faster Charging Technology</h3>
-                        <p>The evolution of fast charging and how it's changing the smartphone user experience.</p>
-                        <a href="#" class="read-more">Read More &rarr;</a>
-                    </div>
-                </article>
-                <!-- Article 19 - 5G Modem Integration -->
-                <article class="article-card">
-                    <img src="https://picsum.photos/seed/5g-modem/400/250.jpg" alt="5G Modem">
-                    <div class="article-content">
-                        <span class="category-tag">Connectivity</span>
-                        <h3>5G Modem Integration: The Future of Mobile Connectivity</h3>
-                        <p>How integrated 5G modems are becoming standard in flagship processors.</p>
-                        <a href="#" class="read-more">Read More &rarr;</a>
-                    </div>
-                </article>
-                <!-- Article 20 -->
-                <article class="article-card">
-                    <img src="https://picsum.photos/seed/foldable-phones/400/250.jpg" alt="Foldable Phone Processors">
-                    <div class="article-content">
-                        <span class="category-tag">Mobile</span>
-                        <h3>Foldable Phone Processors: Powering the Next Generation</h3>
-                        <p>Specialized chips designed to handle the unique demands of foldable smartphone technology.</p>
-                        <a href="#" class="read-more">Read More &rarr;</a>
-                    </div>
-                </article>
+            <div class="container">
+                <h1>Welcome to TechChip Insights</h1>
+                <p>Explore the latest innovations in smart chips, AI processors, and emerging technologies</p>
+                <a href="#articles" class="btn">Explore Articles</a>
             </div>
         </section>
 
-        <!-- ==================== ADSENSE BANNER 2 ==================== -->
-        <div class="ad-container">
-            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-xxxxxxxxxxxxxxxx" data-ad-slot="xxxxxxxxxx" data-ad-format="auto" data-full-width-responsive="true"></ins>
-        </div>
-
-        <!-- ==================== CATEGORIES ==================== -->
-        <section id="categories" class="categories">
+        <section id="articles" class="articles">
             <div class="container">
-                <h2 class="section-title">Explore Categories</h2>
-                <div class="categories-container">
-                    <div class="category-box">
-                        <i class="fas fa-brain"></i>
-                        <h4>Artificial Intelligence</h4>
+                <h2 class="section-title">Latest Articles</h2>
+                <div class="articles-grid">
+                    <div class="article-card">
+                        <div class="article-img">
+                            <img src="https://picsum.photos/seed/ai-chip/400/250.jpg" alt="AI Chip">
+                        </div>
+                        <div class="article-content">
+                            <span class="category">AI</span>
+                            <h3>The Future of AI on a Chip</h3>
+                            <p>How dedicated AI processors are revolutionizing everything from smartphones to data centers.</p>
+                            <a href="article1.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
                     </div>
-                    <div class="category-box">
-                        <i class="fas fa-memory"></i>
-                        <h4>Hardware</h4>
+
+                    <div class="article-card">
+                        <div class="article-img">
+                            <img src="https://picsum.photos/seed/risc-v/400/250.jpg" alt="RISC-V Architecture">
+                        </div>
+                        <div class="article-content">
+                            <span class="category">Hardware</span>
+                            <h3>How RISC-V is Challenging ARM and x86</h3>
+                            <p>An open-source instruction set that promises to democratize chip design and foster innovation.</p>
+                            <a href="article2.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
                     </div>
-                    <div class="category-box">
-                        <i class="fas fa-network-wired"></i>
-                        <h4>IoT</h4>
+
+                    <div class="article-card">
+                        <div class="article-img">
+                            <img src="https://picsum.photos/seed/iot-sensor/400/250.jpg" alt="IoT Sensors">
+                        </div>
+                        <div class="article-content">
+                            <span class="category">IoT</span>
+                            <h3>The Role of Smart Chips in IoT</h3>
+                            <p>Exploring the tiny but powerful microcontrollers that power the Internet of Things.</p>
+                            <a href="article3.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
                     </div>
-                    <div class="category-box">
-                        <i class="fas fa-shield-alt"></i>
-                        <h4>Security</h4>
+
+                    <div class="article-card">
+                        <div class="article-img">
+                            <img src="https://picsum.photos/seed/quantum/400/250.jpg" alt="Quantum Computer">
+                        </div>
+                        <div class="article-content">
+                            <span class="category">Future Tech</span>
+                            <h3>Quantum Computing: Beyond the Classical Chip</h3>
+                            <p>A look into quantum processors and their potential to solve complex problems.</p>
+                            <a href="article4.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
                     </div>
-                    <div class="category-box">
-                        <i class="fas fa-rocket"></i>
-                        <h4>Future Tech</h4>
+
+                    <div class="article-card">
+                        <div class="article-img">
+                            <img src="https://picsum.photos/seed/neuromorphic/400/250.jpg" alt="Neuromorphic Chip">
+                        </div>
+                        <div class="article-content">
+                            <span class="category">AI</span>
+                            <h3>Neuromorphic Chips: Mimicking the Human Brain</h3>
+                            <p>How brain-inspired processors are paving the way for more efficient machine learning.</p>
+                            <a href="article5.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="article-card">
+                        <div class="article-img">
+                            <img src="https://picsum.photos/seed/smartcard/400/250.jpg" alt="Smart Card Security">
+                        </div>
+                        <div class="article-content">
+                            <span class="category">Security</span>
+                            <h3>The Security Implications of Modern Smart Cards</h3>
+                            <p>From payment systems to ID cards, how embedded chips secure our daily transactions.</p>
+                            <a href="article6.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ==================== ABOUT US ==================== -->
-        <section id="about" class="container">
-            <div class="about-content">
+        <section id="about" class="about">
+            <div class="container about-content">
                 <div class="about-text">
                     <h2>About TechChip Insights</h2>
                     <p>We are a team of tech enthusiasts, engineers, and writers passionate about the silicon that powers our world. Our mission is to demystify complex technologies and provide insightful analysis on the latest trends in smart chips and processors.</p>
                     <p>From the intricacies of semiconductor fabrication to the future of quantum computing, we cover it all. Join us as we explore the heart of modern technology.</p>
+                    <p>Our team consists of industry experts with decades of combined experience in semiconductor design, AI research, and technology journalism. We believe in making complex tech accessible to everyone.</p>
                 </div>
                 <div class="about-img">
-                    <img src="https://picsum.photos/seed/about-us/600/400.jpg" alt="About our team">
+                    <img src="https://picsum.photos/seed/about-team/600/400.jpg" alt="Our Team">
                 </div>
             </div>
         </section>
 
-        <!-- ==================== NEWSLETTER ==================== -->
-        <section id="newsletter" class="newsletter">
-            <div class="container">
-                <h2>Subscribe to Our Newsletter</h2>
-                <p>Get the latest articles and insights delivered directly to your inbox.</p>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="Enter your email address" required>
-                    <button type="submit">Subscribe</button>
-                </form>
+        <section id="contact" class="contact">
+            <div class="container contact-content">
+                <div class="contact-text">
+                    <h2>Get In Touch</h2>
+                    <p>We'd love to hear from you! Whether you have a question about our articles, want to contribute, or just want to say hello, feel free to reach out.</p>
+                    <form class="contact-form">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>info@techchipinsights.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Address</h3>
+                            <p>123 Tech Street, Silicon Valley, CA 94025</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h3>Hours</h3>
+                            <p>Monday - Friday: 9AM - 6PM</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
-    <!-- ==================== FOOTER ==================== -->
-    <footer id="contact" class="main-footer">
+    <footer>
         <div class="container footer-content">
             <div class="footer-section">
                 <h3>TechChip Insights</h3>
@@ -724,7 +580,7 @@
                 <h3>Quick Links</h3>
                 <ul>
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#articles">Latest Articles</a></li>
+                    <li><a href="#articles">Articles</a></li>
                     <li><a href="#about">About Us</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -738,29 +594,16 @@
                     <li><a href="#">Security</a></li>
                 </ul>
             </div>
-             <div class="footer-section">
-                <h3>Contact Info</h3>
-                <ul>
-                    <li><i class="fas fa-envelope"></i> info@techchipinsights.com</li>
-                    <li><i class="fas fa-phone"></i> +123 456 7890</li>
-                </ul>
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <p>Subscribe to get our latest updates</p>
+                <input type="email" placeholder="Your email" style="padding: 8px; border-radius: 5px; border: none; margin-bottom: 10px;">
+                <button style="background: var(--primary); color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer;">Subscribe</button>
             </div>
         </div>
         <div class="container copyright">
             <p>&copy; 2024 TechChip Insights. All Rights Reserved.</p>
         </div>
     </footer>
-
-    <!-- ==================== ADSENSE FOOTER ==================== -->
-    <div class="ad-container">
-        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-xxxxxxxxxxxxxxxx" data-ad-slot="xxxxxxxxxx" data-ad-format="auto" data-full-width-responsive="true"></ins>
-    </div>
-
-    <script>
-        // Initialize Google AdSense
-        (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-
 </body>
 </html>
-
